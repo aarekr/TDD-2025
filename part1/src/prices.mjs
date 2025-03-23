@@ -83,13 +83,12 @@ function createApp(database) {
   }
 
   function isMonday(date, datePlain) {
-    return date.getDay() === 1;
+    return datePlain.dayOfWeek === 1;
   }
 
   function isHoliday(date, datePlain) {
     const holidays = database.getHolidays();
     for (let row of holidays) {
-      let holiday = new Date(row.holiday);
       let holidayPlain = Temporal.PlainDate.from(row.holiday);
       if (
         datePlain &&
