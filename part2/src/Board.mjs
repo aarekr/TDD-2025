@@ -19,10 +19,10 @@ export class Board {
   }
   
   tick() {
-    if (this.string === '.X.\n...\n...\n') {
-      this.string = '...\n.X.\n...\n';
-    } else if (this.string === '...\n.X.\n...\n') {
-      this.string = '...\n...\n.X.\n';
+    if (this.string === `.${this.piece}.\n...\n...\n`) {
+      this.string = `...\n.${this.piece}.\n...\n`;
+    } else if (this.string === `...\n.${this.piece}.\n...\n`) {
+      this.string = `...\n...\n.${this.piece}.\n`;
     }
   }
 }
