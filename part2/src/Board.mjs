@@ -6,14 +6,16 @@ export class Board {
     this.width = width;
     this.height = height;
     this.string = '...\n...\n...\n';
+    this.piece;
   }
 
   toString() {
     return this.string;
   }
 
-  drop() {
-    this.string = '.X.\n...\n...\n';
+  drop(piece) {
+    this.piece = piece;
+    this.string = `.${this.piece}.\n...\n...\n`;
   }
   
   tick() {
