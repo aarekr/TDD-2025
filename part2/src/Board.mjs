@@ -5,9 +5,10 @@ export class Board {
   constructor(width, height) {
     this.width = width;
     this.height = height;
+    this.string = '...\n...\n...\n';
   }
 
   toString() {
-    return '...\n...\n...\n';
+    return this.string;
   }
 }
