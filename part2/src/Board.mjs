@@ -11,4 +11,8 @@ export class Board {
   toString() {
     return this.string;
   }
+
+  drop() {
+    this.string = '.X.\n...\n...\n';
+  }
 }
