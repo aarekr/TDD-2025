@@ -6,7 +6,7 @@ export class Board {
     this.width = width;
     this.height = height;
     this.string = '...\n...\n...\n';
-    this.piece;
+    this.piece = '';
   }
 
   toString() {
@@ -23,6 +23,8 @@ export class Board {
       this.string = `...\n.${this.piece}.\n...\n`;
     } else if (this.string === `...\n.${this.piece}.\n...\n`) {
       this.string = `...\n...\n.${this.piece}.\n`;
+    } else if (this.string === `...\n...\n.${this.piece}.\n`) {
+      this.piece = '';
     }
   }
 }
