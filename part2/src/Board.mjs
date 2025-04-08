@@ -10,14 +10,18 @@ export class Board {
   }
 
   toString() {
+    this.piece = '.';
     return this.string;
   }
 
   drop(piece) {
+    if (this.piece != '') {
+      throw new Error('already falling');
+    }
     this.piece = piece;
     this.string = `.${this.piece}.\n...\n...\n`;
   }
-  
+
   tick() {
     if (this.string === `.${this.piece}.\n...\n...\n`) {
       this.string = `...\n.${this.piece}.\n...\n`;
