@@ -15,4 +15,10 @@ export class Board {
   drop() {
     this.string = '.X.\n...\n...\n';
   }
+  
+  tick() {
+    if (this.string === '.X.\n...\n...\n') {
+      this.string = '...\n.X.\n...\n';
+    }
+  }
 }
