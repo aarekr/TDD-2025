@@ -31,4 +31,8 @@ export class Board {
       this.piece = '';
     }
   }
+
+  hasFalling() {
+    return true;
+  }
 }
