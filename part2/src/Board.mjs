@@ -7,6 +7,7 @@ export class Board {
     this.height = height;
     this.string = '...\n...\n...\n';
     this.piece = '';
+    this.hitBottom = false;
   }
 
   toString() {
@@ -27,8 +28,12 @@ export class Board {
       this.string = `...\n.${this.piece}.\n...\n`;
     } else if (this.string === `...\n.${this.piece}.\n...\n`) {
       this.string = `...\n...\n.${this.piece}.\n`;
-    } else if (this.string === `...\n...\n.${this.piece}.\n`) {
+    } else if (this.string === `...\n...\n.${this.piece}.\n` && this.hitBottom === false) {
       this.piece = '';
+      this.hitBottom = true;
+    } else if (this.string === `...\n...\n.${this.piece}.\n` && this.hitBottom === true) {
+      this.piece = '';
+      this.hitBottom = false;
     }
   }
 
