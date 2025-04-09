@@ -38,6 +38,9 @@ export class Board {
   }
 
   hasFalling() {
+    if (this.hitBottom === true) {
+      return false;
+    }
     return true;
   }
 }
